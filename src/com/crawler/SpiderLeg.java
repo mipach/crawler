@@ -20,6 +20,7 @@ public class SpiderLeg {
     private Document htmlDocument;
     private String url;
     private String baseDir;
+    private int countNum;
 
     public SpiderLeg()
     {
@@ -72,9 +73,10 @@ public class SpiderLeg {
             fp.mkdir();
             this.baseDir = file_name[1];
         }
+        //use a counter so you don't write the same pages with the same data
 
         try {
-            Writer writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(baseDir+"\\"+ name[0]+".html"),"utf-8"));
+            Writer writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(baseDir+"\\"+ name[0]+(this.countNum++)+".html"),"utf-8"));
 
             writer.write(htmlDocument.outerHtml());
             return true;
