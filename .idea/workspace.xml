@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ed4ab424-54e6-4aaa-a45f-5c8ba779c7c7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/crawler/SpiderLeg.java" afterPath="$PROJECT_DIR$/src/com/crawler/SpiderLeg.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/crawler/Main.java" afterPath="$PROJECT_DIR$/src/com/crawler/Main.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,11 +16,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/crawler/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="39" lean-forward="false" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
+            <state relative-caret-position="446">
+              <caret line="35" column="16" lean-forward="false" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -38,11 +38,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SpiderLeg.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SpiderLeg.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/crawler/SpiderLeg.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-13">
-              <caret line="55" column="24" lean-forward="true" selection-start-line="55" selection-start-column="24" selection-end-line="55" selection-end-column="24" />
+            <state relative-caret-position="1377">
+              <caret line="87" column="32" lean-forward="false" selection-start-line="87" selection-start-column="32" selection-end-line="87" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#3010#3011#0" expanded="true" />
@@ -92,8 +92,8 @@
       <list>
         <option value="$PROJECT_DIR$/README" />
         <option value="$PROJECT_DIR$/src/com/crawler/Spider.java" />
-        <option value="$PROJECT_DIR$/src/com/crawler/Main.java" />
         <option value="$PROJECT_DIR$/src/com/crawler/SpiderLeg.java" />
+        <option value="$PROJECT_DIR$/src/com/crawler/Main.java" />
       </list>
     </option>
   </component>
@@ -504,7 +504,14 @@
       <option name="project" value="LOCAL" />
       <updated>1491667243408</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="folder creation for each page and anchor links exclusion">
+      <created>1491668721902</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1491668721902</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -551,7 +558,8 @@
     <MESSAGE value="readme update" />
     <MESSAGE value="user agent selection functionality added" />
     <MESSAGE value="select between download and search" />
-    <option name="LAST_COMMIT_MESSAGE" value="select between download and search" />
+    <MESSAGE value="folder creation for each page and anchor links exclusion" />
+    <option name="LAST_COMMIT_MESSAGE" value="folder creation for each page and anchor links exclusion" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -570,11 +578,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/crawler/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/com/crawler/SpiderLeg.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="39" lean-forward="false" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
-          <folding />
+        <state relative-caret-position="1377">
+          <caret line="87" column="32" lean-forward="false" selection-start-line="87" selection-start-column="32" selection-end-line="87" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3010#3011#0" expanded="true" />
+            <element signature="e#3043#3044#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -588,15 +600,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/crawler/SpiderLeg.java">
+    <entry file="file://$PROJECT_DIR$/src/com/crawler/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-13">
-          <caret line="55" column="24" lean-forward="true" selection-start-line="55" selection-start-column="24" selection-end-line="55" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3010#3011#0" expanded="true" />
-            <element signature="e#3043#3044#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="446">
+          <caret line="35" column="16" lean-forward="false" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>

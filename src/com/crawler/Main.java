@@ -7,6 +7,9 @@ public class Main {
     public static void main(String[] args) {
 	// write your code here
         Spider spider = new Spider();
+        int functionality;
+        Scanner in = new Scanner(System.in);
+        String webpage, keyword;
 
 
         System.out.println("Select what function the crawler should execute");
@@ -14,14 +17,23 @@ public class Main {
         System.out.println("2.download and store webpages");
         System.out.print(">");
 
-        int functionality;
-        Scanner in = new Scanner(System.in);
+
         //select site and functionality
         functionality = in.nextInt();
         switch (functionality)
         {
-            case 1: spider.search("http://www.csd.uoc.gr","computer"); break;
-            case 2: spider.download("http://www.csd.uoc.gr"); break;
+            case 1:
+                System.out.print("Give the webpage full domain:");
+                webpage = in.next();
+                System.out.print("Give keyword:");
+                keyword = in.next();
+                spider.search(webpage,keyword);
+                break;
+            case 2:
+                System.out.print("Give the webpage full domain:");
+                webpage = in.next();
+                spider.download(webpage);
+                break;
             default: System.out.print("No such function"); break;
         }
     }
