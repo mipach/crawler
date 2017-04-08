@@ -19,11 +19,13 @@ public class SpiderLeg {
     private String USER_AGENT;
     private Document htmlDocument;
     private String url;
+    private String baseDir;
 
     public SpiderLeg()
     {
         USER_AGENT = "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.108 Safari/537.36 2345Explorer/7.1.0.12633";
         selectUserAgent();
+        baseDir = null;
     }
 
     public boolean crawl(String url)
@@ -46,7 +48,10 @@ public class SpiderLeg {
             Elements linksOnePage = htmlDocument.select("a[href]");
 
             for(Element link: linksOnePage) {
-                this.links.add(link.absUrl("href"));
+                //do not include anchor links
+                if(!link.data().contains("#")) {
+                    this.links.add(link.absUrl("href"));
+                }
             }
             return true;
         }
@@ -61,8 +66,16 @@ public class SpiderLeg {
     {
         String[] file_name = url.split("//");
         String[] name = file_name[1].split("/");
+        //create a folder to store the pages
+        File fp = new File(file_name[1]);
+        if(baseDir == null) {
+            fp.mkdir();
+            this.baseDir = file_name[1];
+        }
+
         try {
-            Writer writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(name[0]+".html"),"utf-8"));
+            Writer writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(baseDir+"\\"+ name[0]+".html"),"utf-8"));
+
             writer.write(htmlDocument.outerHtml());
             return true;
         } catch (UnsupportedEncodingException e) {
