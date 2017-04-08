@@ -48,7 +48,6 @@ public class Spider {
             leg.crawl(currentUrl);
             try {
                 boolean success = leg.searchForWord(searchWord);
-                leg.savePage();
                 if(success) System.out.println("**Success** Word "+searchWord+" found at "+ currentUrl);
             }
             catch(NullPointerException ex)
@@ -61,6 +60,35 @@ public class Spider {
         }
         System.out.println("**Done** Visited all the web pages under domain "+ url);
     }
+    public void download(String url)
+    {
+        SpiderLeg leg = new SpiderLeg();
+        while(this.pagesVisited.size() < MAX_PAGES)
+        {
+            String currentUrl;
+            if(this.pagesToVisit.isEmpty())
+            {
+                currentUrl = url;
+                this.pagesToVisit.add(url);
+            }
+            else
+            {
+                currentUrl = this.nextUrl();
+            }
 
+            leg.crawl(currentUrl);
+            try {
+                boolean success = leg.savePage();
+            }
+            catch(NullPointerException ex)
+            {
+                System.out.println("Something did not fetch correctly");
+            }
+
+
+            this.pagesToVisit.addAll(leg.getLinks());
+        }
+        System.out.println("**Done** Visited all the web pages under domain "+ url);
+    }
 
 }

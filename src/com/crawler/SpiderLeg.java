@@ -57,19 +57,23 @@ public class SpiderLeg {
         }
     }
 
-    public void savePage()
+    public boolean savePage()
     {
         String[] file_name = url.split("//");
         String[] name = file_name[1].split("/");
         try {
             Writer writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(name[0]+".html"),"utf-8"));
             writer.write(htmlDocument.outerHtml());
+            return true;
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
+            return false;
         } catch (FileNotFoundException e) {
             e.printStackTrace();
+            return false;
         } catch (IOException e) {
             e.printStackTrace();
+            return false;
         }
     }
 
