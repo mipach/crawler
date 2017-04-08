@@ -1,6 +1,6 @@
 package com.crawler;
 
-import java.io.IOException;
+import java.io.*;
 import java.util.Set;
 import java.util.HashSet;
 import org.jsoup.Jsoup;
@@ -17,10 +17,12 @@ public class SpiderLeg {
     private Set<String> links = new HashSet<>();
     private final static String USER_AGENT = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.112 Safari/535.1";
     private Document htmlDocument;
+    private String url;
 
     public boolean crawl(String url)
     {
         try{
+            this.url = url;
             Connection connection = Jsoup.connect(url).userAgent(USER_AGENT);
             Document html = connection.get();
             this.htmlDocument = html;
@@ -45,6 +47,22 @@ public class SpiderLeg {
         {
             System.out.println("Error in out HTTP request "+ex);
             return false;
+        }
+    }
+
+    public void savePage()
+    {
+        String[] file_name = url.split("//");
+        String[] name = file_name[1].split("/");
+        try {
+            Writer writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(name[0]+".html"),"utf-8"));
+            writer.write(htmlDocument.outerHtml());
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 

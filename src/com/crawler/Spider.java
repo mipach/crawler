@@ -48,6 +48,7 @@ public class Spider {
             leg.crawl(currentUrl);
             try {
                 boolean success = leg.searchForWord(searchWord);
+                leg.savePage();
                 if(success) System.out.println("**Success** Word "+searchWord+" found at "+ currentUrl);
             }
             catch(NullPointerException ex)
