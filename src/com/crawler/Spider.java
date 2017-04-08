@@ -31,10 +31,10 @@ public class Spider {
 
     public void search(String url, String searchWord)
     {
+        SpiderLeg leg = new SpiderLeg();
         while(this.pagesVisited.size() < MAX_PAGES)
         {
             String currentUrl;
-            SpiderLeg leg = new SpiderLeg();
             if(this.pagesToVisit.isEmpty())
             {
                 currentUrl = url;
